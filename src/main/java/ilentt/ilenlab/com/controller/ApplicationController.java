@@ -1,9 +1,9 @@
 package ilentt.ilenlab.com.controller;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Controller;
+import org.springframework.context.annotation.Configuration;
 
-@Controller
+@Configuration
 public class ApplicationController {
     @Bean
     public OrdersController ordersController() {
