@@ -28,7 +28,7 @@ public class OrdersService implements IOrdersService {
     public Orders updateOrders(Orders orders) throws OrdersNotFound {
         // TODO Auto-generated method stub
         Optional<Orders> ord = Optional.ofNullable(orderRespository.findOne(orders.getOrderID()));
-        if (ord.isPresent()) {
+        if (!ord.isPresent()) {
             throw new OrdersNotFound(String.format("Order %s does not exist.", ord.get().getOrderID()));
         }
         ord.get().setJobTitle(orders.getJobTitle());
@@ -40,7 +40,7 @@ public class OrdersService implements IOrdersService {
     public Orders deleteOrders(Orders orders) throws OrdersNotFound {
         // TODO Auto-generated method stub
         Optional<Orders> ord = Optional.ofNullable(orderRespository.findOne(orders.getOrderID()));
-        if (ord.isPresent()) {
+        if (!ord.isPresent()) {
             throw new OrdersNotFound(String.format("Order %s does not exist.", ord.get().getOrderID()));
         }
         orderRespository.delete(ord.get());

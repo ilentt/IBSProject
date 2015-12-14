@@ -11,13 +11,11 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.context.support.ResourceBundleMessageSource;
 
 import ilentt.ilenlab.com.controller.ApplicationController;
-import ilentt.ilenlab.com.dao.IOrdersRepository;
-import ilentt.ilenlab.com.service.IOrdersService;
+import ilentt.ilenlab.com.controller.OrdersController;
 
 @Configuration
 @EnableAutoConfiguration
-@ComponentScan(basePackageClasses = { ApplicationLauncher.class, ApplicationController.class, IOrdersService.class,
-        IOrdersRepository.class })
+@ComponentScan(basePackageClasses = { ApplicationLauncher.class, ApplicationController.class, OrdersController.class })
 @PropertySource({ "classpath:/application.properties", "classpath:/message.properties" })
 public class ApplicationLauncher {
     public static void main(String[] args) {
