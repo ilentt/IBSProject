@@ -32,7 +32,7 @@
 
   <div class="container">
     <form class="form-horizontal" role="form">
-      <h2>Hello world</h2>
+      <h2>${message}</h2>
       
       <div class="form-group">
         <label class="control-label col-sm-2" for="prjName">Project name:</label>
