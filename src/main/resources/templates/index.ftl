@@ -29,7 +29,11 @@
 </head>
 
 <body>
-
+<div class="container">
+<h2>Home page</h2>
+<a href="/orders" alt="Orders">Order page</a> 
+</div>
+<!--
   <div class="container">
     <form class="form-horizontal" role="form">
       <h2>Hello world</h2>
@@ -72,7 +76,7 @@
       
     </form>
   </div>   
-  
+-->  
 </body>
 
 </html>

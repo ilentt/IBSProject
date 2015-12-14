@@ -5,7 +5,6 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,23 +15,17 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import ilentt.ilenlab.com.dom.Orders;
-import ilentt.ilenlab.com.service.IDummyDataService;
 import ilentt.ilenlab.com.service.IOrdersService;
 
 @Controller
 @RequestMapping(value = "/orders")
 @SessionAttributes(types = Orders.class)
 public class OrdersController {
-    @Value("${application.message}")
-    private String message;
     @Autowired
     private IOrdersService orderService;
-    @Autowired
-    private IDummyDataService dummyDataService;
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView getOrders() {
-        dummyDataService.setupOrders();
         List<Orders> orders = orderService.findAllOrders();
         return new ModelAndView("orders-list", "orders", orders);
     }
