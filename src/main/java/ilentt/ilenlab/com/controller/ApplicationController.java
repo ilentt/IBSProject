@@ -34,6 +34,7 @@ public class ApplicationController {
 
     @Bean
     public OrdersController ordersController() {
+        // call OrdersController
         return new OrdersController();
     }
 }
